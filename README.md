@@ -1,2 +1,2 @@
 # GRADE
-## Grade Recognition And Discussing Evaluation
+## Grade Recognition And Discuss Evaluation
