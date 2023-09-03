@@ -2,9 +2,10 @@ module.exports = [
     {
         name: 'Janice Albenworth',
         email: 'janicealbenworth@gmail.com',
-        classes: [
+        password: '',
+        courses: [
             {
-                className: 'Spanish I',
+                courseName: 'Spanish I',
                 teacher: 'Rich Stevens',
                 assignments: [
                     {
@@ -20,10 +21,10 @@ module.exports = [
                         grade: 65
                     },
                 ],
-                classGrade: 0,
+                courseGrade: 0,
             },
             {
-                className: 'AP Chemistry',
+                courseName: 'AP Chemistry',
                 teacher: 'Richard Hawk',
                 assignments: [
                     {
@@ -47,16 +48,17 @@ module.exports = [
                         grade: 80
                     },
                 ],
-                classGrade: 0,
+                courseGrade: 0,
             }
         ]
     },
     {
         name: 'Frank Reels',
         email: 'frankreels@gmail.com',
-        classes: [
+        password: '',
+        courses: [
             {
-                className: 'Algebra II',
+                courseName: 'Algebra II',
                 teacher: 'Sarah Price',
                 assignments: [
                     {
@@ -76,16 +78,17 @@ module.exports = [
                         grade: 87
                     }
                 ],
-                classGrade: 0,
+                courseGrade: 0,
             },
         ]
     },
     {
         name: 'Timothy Sutwater',
         email: 'timothysutwater@gmail.com',
-        classes: [
+        password: '',
+        courses: [
             {
-                className: 'Spanish I',
+                courseName: 'Spanish I',
                 teacher: 'Rich Stevens',
                 assignments: [
                     {
@@ -101,10 +104,10 @@ module.exports = [
                         grade: 70
                     },
                 ],
-                classGrade: 0,
+                courseGrade: 0,
             },
             {
-                className: 'AP Chemistry',
+                courseName: 'AP Chemistry',
                 teacher: 'Richard Hawk',
                 assignments: [
                     {
@@ -128,16 +131,17 @@ module.exports = [
                         grade: 87
                     },
                 ],
-                classGrade: 0,
+                courseGrade: 0,
             }
         ]
     },
     {
         name: 'Mac Rox',
         email: 'macrox@gmail.com',
-        classes: [
+        password: '',
+        courses: [
             {
-                className: 'Spanish I',
+                courseName: 'Spanish I',
                 teacher: 'Rich Stevens',
                 assignments: [
                     {
@@ -153,10 +157,10 @@ module.exports = [
                         grade: 75
                     },
                 ],
-                classGrade: 0,
+                courseGrade: 0,
             },
             {
-                className: 'Algebra II',
+                courseName: 'Algebra II',
                 teacher: 'Sarah Price',
                 assignments: [
                     {
@@ -176,16 +180,17 @@ module.exports = [
                         grade: 65
                     }
                 ],
-                classGrade: 0,
+                courseGrade: 0,
             }
         ]
     },
     {
         name: 'Penny Frost',
         email: 'pennyfrost@gmail.com',
-        classes: [
+        password: '',
+        courses: [
             {
-                className: 'Algebra II',
+                courseName: 'Algebra II',
                 teacher: 'Sarah Price',
                 assignments: [
                     {
@@ -205,7 +210,7 @@ module.exports = [
                         grade: 89
                     }
                 ],
-                classGrade: 0,
+                courseGrade: 0,
             }
         ]
     },
@@ -213,9 +218,9 @@ module.exports = [
 ]
 
 module.exports.forEach((student) => {
-    student.classes.forEach((course) => {
+    student.courses.forEach((course) => {
         const grades = course.assignments.map((assignment) => assignment.grade);
-        const meanGrade = grades.length > 0 ? grades.reduce((sum, grade) => sum + grade, 0) / grades.length : 0;
-        course.classGrade = meanGrade;
+        const meanGrade = grades.length > 0 ? (grades.reduce((sum, grade) => sum + grade, 0) / grades.length) : 0;
+        course.courseGrade = parseFloat(meanGrade.toFixed(2));
     });
 });
