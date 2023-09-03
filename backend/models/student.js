@@ -1,6 +1,7 @@
 const Student =  {
     name: '',
     email: '',
+    password: '',
     classes: [
         {
             className: '',
